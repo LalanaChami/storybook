@@ -1,7 +1,12 @@
 import PropTypes from 'prop-types';
-import { isForwardRef, isMemo } from 'react-is';
-import { PropDef } from '@storybook/components';
-import { hasDocgen, extractComponentProps, PropsExtractor, TypeSystem } from '../../lib/docgen';
+import { isMemo } from 'react-is';
+import {
+  PropDef,
+  hasDocgen,
+  extractComponentProps,
+  PropsExtractor,
+  TypeSystem,
+} from '../../lib/docgen';
 import { Component } from '../../blocks/types';
 import { enhancePropTypesProps } from './propTypes/handleProp';
 import { enhanceTypeScriptProps } from './typeScript/handleProp';
@@ -25,7 +30,7 @@ function getPropDefs(component: Component, section: string): PropDef[] {
 
   // eslint-disable-next-line react/forbid-foreign-prop-types
   if (!hasDocgen(component) && !component.propTypes) {
-    if (isForwardRef(component) || component.render) {
+    if (component.render) {
       processedComponent = component.render({}).type;
     }
     if (isMemo(component)) {
