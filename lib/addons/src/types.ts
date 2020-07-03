@@ -56,7 +56,7 @@ export type StoryContext = StoryIdentifier & {
   [key: string]: any;
   parameters: Parameters;
   args: Args;
-  globalArgs: Args;
+  globals: Args;
   hooks?: HooksContext;
 };
 
@@ -78,9 +78,6 @@ export type StorySortParameter = Comparator<any> | StorySortObjectParameter;
 
 export interface OptionsParameter extends Object {
   storySort?: StorySortParameter;
-  hierarchyRootSeparator?: string;
-  hierarchySeparator?: RegExp;
-  showRoots?: boolean;
   theme?: {
     base: string;
     brandTitle?: string;

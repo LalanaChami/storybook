@@ -35,7 +35,7 @@ const enhance = ({
       },
     },
     args: {},
-    globalArgs: {},
+    globals: {},
   };
   return enhanceArgTypes(context);
 };
@@ -305,6 +305,14 @@ describe('enhanceArgTypes', () => {
                 "type": "number"
               },
               "name": "input",
+              "type": {
+                "name": "number"
+              }
+            },
+            "foo": {
+              "control": {
+                "type": "number"
+              },
               "type": {
                 "name": "number"
               }
